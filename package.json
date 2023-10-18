@@ -1,0 +1,27 @@
+{
+  "name": "agency-website",
+  "version": "1.0.0",
+  "description": "Building a fast, lightweight website using Eleventy and SCSS",
+  "main": ".eleventy.js",
+  "scripts": {
+    "build": "npx eleventy",
+    "dev": "npx eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dipshanadh/agency-website.git"
+  },
+  "keywords": [
+    "eleventy",
+    "scss"
+  ],
+  "author": "Dipshan Adhikari <dipshanadh@gmail.com>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dipshanadh/agency-website/issues"
+  },
+  "homepage": "https://github.com/dipshanadh/agency-website#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}
