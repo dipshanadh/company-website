@@ -1,5 +1,5 @@
-module.exports = config => {
-  config.addPassthroughCopy("./src/images");
+module.exports = eleventyConfig => {
+  eleventyConfig.addPassthroughCopy("./src/images");
 
   return {
     markdownTemplateEngine: "njk",
