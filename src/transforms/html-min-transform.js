@@ -7,7 +7,6 @@ module.exports = (content, outputPath) => {
       removeComments: true,
       collapseWhitespace: true,
       minifyCSS: true,
-      sortAttributes: true,
     });
   }
 

@@ -23,6 +23,7 @@
   "homepage": "https://github.com/dipshanadh/agency-website#readme",
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-cache-assets": "^2.3.0",
     "html-minifier": "^4.0.0",
     "lightningcss": "^1.22.0",
     "sass": "^1.69.4"
