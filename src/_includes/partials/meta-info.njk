@@ -2,7 +2,7 @@
 
 {# Avoid duplication in home page #}
 {% if site.name === title %}
-    {% set pageTitle = title %}
+{% set pageTitle = title %}
 {% endif %}
 
 {% set siteTitle = site.name %}
@@ -10,11 +10,11 @@
 
 {# If the page Front Matter has specific metaTitle and/or metaDesc #}
 {% if metaTitle %}
-    {% set pageTitle = metaTitle %}
+  {% set pageTitle = metaTitle %}
 {% endif %}
 
 {% if not metaDesc %}
-    {% set metaDesc = summary %}
+  {% set metaDesc = summary %}
 {% endif %}
 
 <title>{{ pageTitle }}</title>
@@ -27,15 +27,15 @@
 <meta property="og:url" content="{{ currentUrl }}"/>
 
 {% if socialImage %}
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta property="og:image" content="{{ socialImage }}"/>
-    <meta name="twitter:image" content="{{ socialImage }}"/>
-    <meta property="og:image:alt" content="Page image for {{ siteTitle }}"/>
-    <meta name="twitter:image:alt" content="Page image for {{ siteTitle }}"/>
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta property="og:image" content="{{ socialImage }}"/>
+	<meta name="twitter:image" content="{{ socialImage }}"/>
+	<meta property="og:image:alt" content="Page image for {{ siteTitle }}"/>
+	<meta name="twitter:image:alt" content="Page image for {{ siteTitle }}"/>
 {% endif %}
 
 {% if metaDesc %}
-    <meta name="description" content="{{ metaDesc }}"/>
-    <meta name="twitter:description" content="{{ metaDesc }}"/>
-    <meta property="og:description" content="{{ metaDesc }}"/>
+  <meta name="description" content="{{ metaDesc }}"/>
+  <meta name="twitter:description" content="{{ metaDesc }}"/>
+  <meta property="og:description" content="{{ metaDesc }}"/>
 {% endif %}

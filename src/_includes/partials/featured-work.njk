@@ -1,0 +1,29 @@
+<article class="[ featured-work ] [ dot-shadow panel ] [ bg-light-glare ]">
+  <div class="[ wraper ] [ flow ]">
+    <div class="[ featured-work__inner ] [ flow ]">
+      <div class="[ featured-work__intro ] [ flow flow-space-300 ]">
+        <h2 class="[ featured-work__heading ] [ headine ] [ coor-quinary-shade lg:measure-micro ]" 
+          data-hightlight="dark">
+          {{ featuredWork.title }}
+        </h2>
+        <p class="[ featured-work__sumary ] [ measure-compact ]">
+          {{ featuredWork.summary }}
+        </p>
+      </div>
+      {% for item in collections.featuredWork %}
+        <a 
+          href="{{ item.url }}" 
+          class="[ featured-work__item ] [ frame ]" 
+          aria-label="See {{ item.data.titl }}" data-frame="quaternary"
+        />
+          <img 
+            src="{{ item.data.hero.image }}" 
+            alt="{{ item.data.hero.imageAlt }}" 
+            class="radius" 
+            loading="lazy"
+          />
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</article>

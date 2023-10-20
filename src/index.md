@@ -13,6 +13,10 @@ intro:
   image: "/images/bg/toast.jpg"
   imageAlt: "Buttered toasted white bread"
 
+featuredWork:
+  title: "Selected work"
+  summary: "Some stuff that should give you an idea of what we’re all about."
+
 primaryCTA:
   title: "Optimized Websites for All Devices"
   summary: "Elevate your online presence with websites that are SEO-friendly and accessible to everyone, on any device."
