@@ -4,7 +4,7 @@
   "description": "Building a fast, lightweight website using Eleventy and SCSS",
   "main": ".eleventy.js",
   "scripts": {
-    "build": "npx eleventy",
+    "build": "SET NODE_ENV=production && npx eleventy",
     "dev": "npx eleventy --serve"
   },
   "repository": {
@@ -21,7 +21,10 @@
     "url": "https://github.com/dipshanadh/agency-website/issues"
   },
   "homepage": "https://github.com/dipshanadh/agency-website#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "html-minifier": "^4.0.0",
+    "lightningcss": "^1.22.0",
+    "sass": "^1.69.4"
   }
 }
