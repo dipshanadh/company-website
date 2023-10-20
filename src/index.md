@@ -7,7 +7,7 @@ metaDesc: "Kopila Coders - Your Fast, Lightweight, SEO-Friendly, and Accessible 
 intro:
   eyebrow: "We are"
   main: "Kopila Coders"
-  summary: "We help organizations by crafting their stunning website with our team of talented creatives."
+  summary: "Helping organizations craft their stunning website is our bread and butter."
   buttonText: "See our work"
   buttonUrl: "/work"
   image: "/images/bg/toast.jpg"
