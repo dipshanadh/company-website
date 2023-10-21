@@ -1,18 +1,20 @@
+const Image = require("@11ty/eleventy-img");
 const sass = require("sass");
 const path = require("path");
-const { transform } = require("lightningcss");
-const { config } = require("dotenv");
+const lightningcss = require("lightningcss");
 
-config();
+require("dotenv").config({ path: ".env" });
 
 // transforms
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 
 // utils
 const sortByDisplayOrder = require("./src/utils/sort-by-display-order.js");
+const stringifyAttributes = require("./src/utils/stringify-attributes.js");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("./src/images");
+  // Passthrough file copy for favicon
+  eleventyConfig.addPassthroughCopy("images/icons/favicon.svg");
 
   // Recognize Sass as a "template language"
   eleventyConfig.addTemplateFormats("scss");
@@ -28,7 +30,7 @@ module.exports = function (eleventyConfig) {
         return;
       }
 
-      let result = sass.compileString(inputContent, {
+      const result = sass.compileString(inputContent, {
         loadPaths: [parsed.dir || "."],
         sourceMap: false,
       });
@@ -36,16 +38,43 @@ module.exports = function (eleventyConfig) {
       this.addDependencies(inputPath, result.loadedUrls);
 
       return () => {
-        const { code } = transform({
+        const css = lightningcss.transform({
           code: Buffer.from(result.css),
           minify: true,
           sourceMap: false,
-        });
+        }).code;
 
-        return code;
+        return css;
       };
     },
   });
+
+  // For Image short code for optimization
+  eleventyConfig.addNunjucksAsyncShortcode(
+    "Image",
+    async (src, alt, className) => {
+      const metadata = await Image("src/" + src, {
+        widths: ["auto"],
+        formats: ["webp"],
+        outputDir: "dist/images",
+        urlPath: "images",
+      });
+
+      const img = metadata.webp[0];
+
+      const imageAttributes = stringifyAttributes({
+        alt,
+        src: img.url,
+        class: className,
+        width: img.width,
+        height: img.height,
+        loading: "lazy",
+        decoding: "async",
+      });
+
+      return `<img ${imageAttributes} />`;
+    }
+  );
 
   // Returns work items, sorted by display order
   eleventyConfig.addCollection("work", collection => {

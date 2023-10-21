@@ -18,11 +18,7 @@
         </a>
       </div>
       <div class="[ intro__media ] [ radius dot-shadow ]">
-        <img
-          class="[ intro__image ] [ radius ]"
-          src="{{ intro.image }}"
-          alt="{{ intro.imageAlt }}"
-        />
+        {% Image intro.image, intro.imageAlt, "radius" %}
       </div>
     </article>
   </div>

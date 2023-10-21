@@ -4,7 +4,8 @@
   "description": "Building a fast, lightweight website using Eleventy and SCSS",
   "main": ".eleventy.js",
   "scripts": {
-    "build": "npx eleventy",
+    "purgecss": "purgecss --config purgecss.config.js --output dist/styles/styles.css",
+    "build": "npx eleventy && npm run purgecss",
     "dev": "npx eleventy --serve"
   },
   "repository": {
@@ -24,10 +25,12 @@
   "dependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.0",
+    "@11ty/eleventy-img": "^3.1.1",
     "dotenv": "^16.3.1",
     "gorko": "^0.9.1",
     "html-minifier": "^4.0.0",
     "lightningcss": "^1.22.0",
+    "purgecss": "^5.0.0",
     "sass": "^1.69.4"
   }
 }

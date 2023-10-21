@@ -16,12 +16,7 @@
           class="[ featured-work__item ] [ frame ]" 
           aria-label="See {{ item.data.titl }}" data-frame="quaternary"
         />
-          <img 
-            src="{{ item.data.hero.image }}" 
-            alt="{{ item.data.hero.imageAlt }}" 
-            class="radius" 
-            loading="lazy"
-          />
+          {% Image item.data.hero.image, item.data.hero.imageAlt, "radius"  %}
         </a>
       {% endfor %}
     </div>
