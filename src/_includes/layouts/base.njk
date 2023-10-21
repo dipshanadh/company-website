@@ -8,10 +8,16 @@
     <link rel="preload" href="styles/critical.css" as="style" onload="this.rel='stylesheet'">
   </head>
   <body>
-    {% include "partials/site-head.njk" %}
+    <div class="site-wrap">
+      {% include "partials/site-head.njk" %}
 
-    <main tabindex="-1" id="main-content">
-      {% block content %}{% endblock %}
-    </main>
+      <main tabindex="-1" id="main-content">
+        {% block content %}{% endblock %}
+      </main>
+
+      <footer role="contentinfo" class="site-foot">
+        <div class="wrapper">{{ site.desc }}</div>
+      </footer>
+    </div>
   </body>
 </html>

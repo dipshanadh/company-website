@@ -2,12 +2,10 @@
 title: "Kopila Coders"
 layout: "layouts/home.njk"
 
-metaDesc: "Kopila Coders - Your Fast, Lightweight, SEO-Friendly, and Accessible Web Design Partner in Nepal. Craft your dream website with our talented young developers."
-
 intro:
   eyebrow: "We are"
   main: "Kopila Coders"
-  summary: "Helping organizations craft their stunning website is our bread and butter."
+  summary: "Crafting stunning websites for organizations is our bread and butter."
   buttonText: "See our work"
   buttonUrl: "/work"
   image: "/images/bg/toast.jpg"

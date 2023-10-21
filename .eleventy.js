@@ -1,6 +1,9 @@
 const sass = require("sass");
 const path = require("path");
 const { transform } = require("lightningcss");
+const { config } = require("dotenv");
+
+config();
 
 // transforms
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
