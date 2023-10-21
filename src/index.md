@@ -5,7 +5,7 @@ layout: "layouts/home.njk"
 intro:
   eyebrow: "We are"
   main: "Kopila Coders"
-  summary: "Crafting stunning websites for organizations is our bread and butter."
+  summary: "Crafting stunning websites for organizations is our Bread and Butter."
   buttonText: "See our work"
   buttonUrl: "/work"
   image: "/images/bg/toast.jpg"

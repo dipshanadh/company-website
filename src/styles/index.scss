@@ -72,8 +72,10 @@ h4 {
 @import "blocks/definition-group";
 @import "blocks/tags-list";
 @import "blocks/site-head";
-@import "blocks/nav.scss";
-@import "blocks/site-foot.scss";
+@import "blocks/nav";
+@import "blocks/site-foot";
+@import "blocks/button";
+@import "blocks/skip-link";
 
 // Import utilities
 @import "utilities/dot-shadow";

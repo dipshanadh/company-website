@@ -3,8 +3,6 @@ const sass = require("sass");
 const path = require("path");
 const lightningcss = require("lightningcss");
 
-require("dotenv").config({ path: ".env" });
-
 // transforms
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
 
@@ -14,7 +12,7 @@ const stringifyAttributes = require("./src/utils/stringify-attributes.js");
 
 module.exports = function (eleventyConfig) {
   // Passthrough file copy for favicon
-  eleventyConfig.addPassthroughCopy("images/icons/favicon.svg");
+  eleventyConfig.addPassthroughCopy("src/images/icons/favicon.png");
 
   // Recognize Sass as a "template language"
   eleventyConfig.addTemplateFormats("scss");
@@ -58,6 +56,16 @@ module.exports = function (eleventyConfig) {
         formats: ["webp"],
         outputDir: "dist/images",
         urlPath: "images",
+
+        // Advanced options passed to eleventy-fetch
+        cacheOptions: {
+          duration: "1d",
+        },
+
+        // Advanced options passed to sharp
+        sharpWebpOptions: {
+          quality: 50,
+        },
       });
 
       const img = metadata.webp[0];
@@ -88,10 +96,7 @@ module.exports = function (eleventyConfig) {
     ).filter(work => work.data.featured);
   });
 
-  // Minify HTML if we are in production
-  if (process.env.NODE_ENV === "production") {
-    eleventyConfig.addTransform("htmlmin", htmlMinTransform);
-  }
+  eleventyConfig.addTransform("htmlmin", htmlMinTransform);
 
   return {
     markdownTemplateEngine: "njk",
