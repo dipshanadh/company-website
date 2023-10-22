@@ -5,7 +5,7 @@ intergenerational volunteering.'
 displayOrder: 3
 featured: true 
 hero:
-  image: '/images/work/brunch-and-brew-hero.jpg'
+  image: 'images/work/brunch-and-brew-hero.jpg'
   imageAlt: 'A composition of the main landing screen and other key
   views'
 keyFacts:
@@ -25,14 +25,14 @@ gallery:
   - title: 'Making sign-up simple'
     summary: 'We wanted to help them acheive lots of sign-ups, so
     naturally, we kept it simple'
-    image: '/images/work/brunch-and-brew-gallery-1.jpg'
+    image: 'images/work/brunch-and-brew-gallery-1.jpg'
   - title: 'Clear calls to action'
     summary: 'You know exactly what you’re looking at and exactly what
     will happen. Perfect.'
-    image: '/images/work/brunch-and-brew-gallery-2.jpg'
+    image: 'images/work/brunch-and-brew-gallery-2.jpg'
   - title: 'Data clarity'
     summary: 'Using charts we help communicate the information that
     means the most.'
-    image: '/images/work/brunch-and-brew-gallery-3.jpg'
+    image: 'images/work/brunch-and-brew-gallery-3.jpg'
 team: [2, 5, 4]
 ---

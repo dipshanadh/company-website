@@ -60,7 +60,7 @@ module.exports = function (eleventyConfig) {
         widths: ["auto"],
         formats: ["webp"],
         outputDir: "dist/images",
-        urlPath: "images",
+        urlPath: "/images",
 
         // Advanced options passed to eleventy-fetch
         cacheOptions: {
@@ -99,6 +99,11 @@ module.exports = function (eleventyConfig) {
     return sortByDisplayOrder(
       collection.getFilteredByGlob("./src/work/*.md")
     ).filter(work => work.data.featured);
+  });
+
+  // Returns a collection of blog posts in reverse order date
+  eleventyConfig.addCollection("blog", collection => {
+    return [...collection.getFilteredByGlob("./src/posts/*.md")].reverse();
   });
 
   eleventyConfig.addTransform("htmlmin", htmlMinTransform);

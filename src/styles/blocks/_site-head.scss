@@ -10,8 +10,6 @@
 
   &__brand {
     flex-shrink: 0;
-    flex-grow: 1;
-    text-align: center;
     margin-inline-end: get-size("600"); // prevents nav bunching up to logo
 
     // Optical adjustment to account for offset the sunken 3s create
@@ -19,7 +17,6 @@
 
     img {
       width: 120px;
-      margin-inline: auto;
     }
   }
 
@@ -29,8 +26,6 @@
 
   @include media-query("md") {
     &__brand {
-      flex-grow: 0;
-
       img {
         width: 160px;
       }

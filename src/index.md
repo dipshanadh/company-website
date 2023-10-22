@@ -8,7 +8,7 @@ intro:
   summary: "Crafting stunning websites for organizations is our Bread and Butter."
   buttonText: "See our work"
   buttonUrl: "/work"
-  image: "/images/bg/toast.jpg"
+  image: "images/bg/toast.jpg"
   imageAlt: "Buttered toasted white bread"
 
 featuredWork:
