@@ -51,7 +51,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addNunjucksAsyncShortcode(
     "Image",
     async (src, alt, className) => {
-      const metadata = await Image("src/" + src, {
+      // Local images are inside src folder
+      if (!src.startsWith("https://")) {
+        src = `src/${src}`;
+      }
+
+      const metadata = await Image(src, {
         widths: ["auto"],
         formats: ["webp"],
         outputDir: "dist/images",

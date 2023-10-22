@@ -10,8 +10,8 @@
       <div class="[ studo-feed__items ] [ flow-space-700 ]">
         <ul class="studio-feed__list">
           {% for item in studio %}
-             <li>
-              <img src="{{ item.medium }}" alt="{{ item.alt }}" draggable="false" class="radius">
+            <li>
+              {% Image item.medium, item.alt, radius %} 
             </li>
           {% endfor %}
         </ul>
