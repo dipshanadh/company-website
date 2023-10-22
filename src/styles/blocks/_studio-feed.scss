@@ -1,0 +1,33 @@
+.studio-feed {
+  &__list {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+
+    > * {
+      width: 16rem;
+      height: 13rem;
+      flex-shrink: 0;
+      padding: 0 0 get-size("500") 0;
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    > * + * {
+      margin-inline-start: get-size("500");
+    }
+  }
+
+  @include media-query("md") {
+    &__list {
+      > * {
+        width: 28rem;
+        height: 17rem;
+      }
+    }
+  }
+}

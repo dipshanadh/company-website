@@ -1,8 +1,9 @@
 <article class="[ featured-work ] [ dot-shadow panel ] [ bg-light-glare ]">
-  <div class="[ wraper ] [ flow ]">
+  <div class="[ wrapper ] [ flow ]">
     <div class="[ featured-work__inner ] [ flow ]">
       <div class="[ featured-work__intro ] [ flow flow-space-300 ]">
-        <h2 class="[ featured-work__heading ] [ headine ] [ coor-quinary-shade lg:measure-micro ]" 
+        <h2 
+          class="[ featured-work__heading ] [ headline ] [ color-quinary-shade lg:measure-micro ]" 
           data-hightlight="dark">
           {{ featuredWork.title }}
         </h2>
@@ -14,11 +15,14 @@
         <a 
           href="{{ item.url }}" 
           class="[ featured-work__item ] [ frame ]" 
-          aria-label="See {{ item.data.titl }}" data-frame="quaternary"
+          aria-label="See {{ item.data.title }}" data-frame="quaternary"
         />
           {% Image item.data.hero.image, item.data.hero.imageAlt, "radius"  %}
         </a>
       {% endfor %}
+    </div>
+    <div class="[ featured-work__action ] [ flow-space-700 ]">
+      <a href="/work" class="button">See more work</a>
     </div>
   </div>
 </article>
