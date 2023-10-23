@@ -14,7 +14,7 @@
         {% if pagination.href.next %}
           <a 
             href="{{ pagination.href.next }}{{ paginationAnchor }}" 
-            data-direction="backwards"
+            data-direction="forwards"
           >
             <span>{{ paginationNextText if paginationNextText else "Next" }}</span>
           </a>

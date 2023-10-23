@@ -10,7 +10,7 @@
     {# Add facility for pages to declare an array of stylesheet paths #}
     {% if pageStylesheets %}
       {% for item in pageStylesheets %}
-        <link rel="preload" href="styles/{{ item }}" as="style" onload="this.rel='stylesheet'">
+        <link rel="preload" href="/styles/{{ item }}" as="style" onload="this.rel='stylesheet'">
       {% endfor %}
     {% endif %}
   </head>

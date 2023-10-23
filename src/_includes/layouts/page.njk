@@ -1,0 +1,16 @@
+{% extends "layouts/base.njk" %}
+
+{% set pageHeaderTitle = title %}
+{% set pageStylesheets = ["page.css"] %}
+
+{% block content %}
+  <article>
+    {% include "partials/page-header.njk" %}
+    
+    <div class="panel dot-shadow bg-tertiary-glare">
+      <div class="[ page-content ] [ flow wrapper ] [ flow-space-700 ]">
+        {{ content | safe }}
+      </div>
+    </div>
+  </article>
+{% endblock %}

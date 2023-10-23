@@ -10,4 +10,4 @@ paginationNextText: "Older Posts"
 paginationAnchor: "#post-list"
 ---
 
-The latest articles from around the company, demonstrating our design thinking, strategy and expertise.
+Explore the most recent articles showcasing our company's design thinking, strategy, and expertise in website development.
