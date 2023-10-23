@@ -1,7 +1,12 @@
+// Libs
 const Image = require("@11ty/eleventy-img");
 const sass = require("sass");
 const path = require("path");
 const lightningcss = require("lightningcss");
+
+// Filters
+const dateFilter = require("./src/filters/date-filter.js");
+const w3DateFilter = require("./src/filters/w3-date-filter.js");
 
 // transforms
 const htmlMinTransform = require("./src/transforms/html-min-transform.js");
@@ -24,6 +29,7 @@ module.exports = function (eleventyConfig) {
     async compile(inputContent, inputPath) {
       const parsed = path.parse(inputPath);
 
+      // Ignore partials
       if (parsed.name.startsWith("_")) {
         return;
       }
@@ -33,9 +39,11 @@ module.exports = function (eleventyConfig) {
         sourceMap: false,
       });
 
+      // Add imported files in Sass file
       this.addDependencies(inputPath, result.loadedUrls);
 
       return () => {
+        // Compress using lightningCSS
         const css = lightningcss.transform({
           code: Buffer.from(result.css),
           minify: true,
@@ -56,6 +64,7 @@ module.exports = function (eleventyConfig) {
         src = `src/${src}`;
       }
 
+      // Cache and compress image
       const metadata = await Image(src, {
         widths: ["auto"],
         formats: ["webp"],
@@ -106,6 +115,11 @@ module.exports = function (eleventyConfig) {
     return [...collection.getFilteredByGlob("./src/posts/*.md")].reverse();
   });
 
+  // Add filters
+  eleventyConfig.addNunjucksFilter("dateFilter", dateFilter);
+  eleventyConfig.addNunjucksFilter("w3DateFilter", w3DateFilter);
+
+  // Minify HTML
   eleventyConfig.addTransform("htmlmin", htmlMinTransform);
 
   return {
