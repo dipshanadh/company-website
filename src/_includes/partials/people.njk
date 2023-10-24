@@ -1,19 +1,19 @@
 {% if peopleItems %}
   <div class="people">
-    <div class="auto-grid">
+    <ul class="auto-grid">
       {% for item in peopleItems %}
         <li>
           <figure class="[ person ] [ frame ]" data-frame="quaternary">
-            {% Image item.data.image, "Image of {{ item.data.name }}", "[ person__image ] [ radius ]" %}
+            {% Image item.data.image, "Image of " + item.data.name, "[ person__image ] [ radius ]" %}
             <figcaption class="[ person__details ] [ leading-tight ]">
               <span class="[ person__name ] [ font-sans weight-bold ]">
-                {{ item.data.image }}
+                {{ item.data.name }}
               </span>
               <span class="person__title">{{ item.data.title }}</span>
             </figcaption>
           </figure>
         </li>
       {% endfor %}
-    </div>
+    </ul>
   </div>
 {% endif %}

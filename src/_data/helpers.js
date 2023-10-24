@@ -20,4 +20,16 @@ module.exports = {
 
     return response;
   },
+  /**
+   * Take an array of keys and return back items that match.
+   * Note: items in frontmatter must have a key atribute
+   * in Front matter
+   *
+   * @param {Array} collection 11ty collection
+   * @param {Array} keys collection of keys
+   * @returns {Array} result collection or empty
+   */
+  filterCollectionByKeys(collection, keys) {
+    return collection.filter(col => keys.includes(col.data.key));
+  },
 };

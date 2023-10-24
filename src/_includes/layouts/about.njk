@@ -7,7 +7,7 @@
 {% block content %}
   <article>
     {% include "partials/page-header.njk" %}
-    {% if peopleItems %}
+    {% ifAsync peopleItems %}
       <div class="[ no-js-hidden ] [ panel dot-shadow ] [ bg-light-glare ]">
         <div class="[ wrapper ] [ flow flow-space-700 ]">
           <h2 class="[ headline ] [ measure-micro color-quinary ]" data-highlight="dark">
