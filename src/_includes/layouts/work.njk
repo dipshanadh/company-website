@@ -1,6 +1,7 @@
 {% extends "layouts/base.njk" %}
 
 {% set peopleItems = helpers.filterCollectionByKeys(collections.people, team) %}
+{% set pageStylesheets = ["work.css"] %}
 
 {% block content %}
   <section class="work-item">
@@ -41,15 +42,15 @@
             <div class="[ gallery__media ] [ frame ]" data-frame="primary">
               {% Image item.image, "", "radius" %}
             </div>
+            <figcaption class="[ gallery__content ] [ flow ]">
+              <h2 class="[ gallery__heading ] [ text-700 md:text-900 ]">
+                {{ item.title }}
+              </h2>
+              <p class="[ gallery__summary ] [ measure-short flow-space-300 ]">
+                {{ item.summary }}
+              </p>
+            </figcaption>
           </figure>
-          <figcaption class="[ gallery__content ] [ flow ]">
-            <h2 class="[ gallery__heading ] [ text-700 md:text-900 ]">
-              {{ item.title }}
-            </h2>
-            <p class="[ gallery__summary ] [ measure-short flow-space-300 ]">
-              {{ item.summary }}
-            </p>
-          </figcaption>
         {% endfor %}
       </article>
     </div>
